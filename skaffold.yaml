@@ -1,0 +1,28 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  tagPolicy:
+    gitCommit: {}
+
+  artifacts:
+  - image: docker.io/starlane/docs
+    context: starlane.io
+  - image: docker.io/starlane/thecosmicinitiative
+    context: thecosmicinitiative.io
+
+
+deploy:
+  helm:
+    flags:
+
+    releases:
+    - name: starlane
+      namespace: starlane
+      chartPath: charts/docs 
+      values:
+        starlane: docker.io/starlane/docs
+        thecosmicinitiative: docker.io/starlane/thecosmicinitiative
+
+
+
+
