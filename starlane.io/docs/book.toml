@@ -6,6 +6,6 @@ multilingual = false
 src = "src"
 
 [build]
-build-dir = "docs"                # the directory where the output is placed
+build-dir = "../target"                # the directory where the output is placed
 create-missing = true             # whether or not to create missing pages
 use-default-preprocessors = true  # use the default preprocessors
